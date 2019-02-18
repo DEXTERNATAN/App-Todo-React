@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import logo from '../logo.svg';
 import './App.css';
-import Sobre from '../Sobre/Sobre.js';
+import Sobre from '../Sobre/Sobre';
+import Menu from '../Menu/Menu'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+        <Menu />
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>

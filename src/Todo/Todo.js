@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 // import logo from '../logo.svg';
+import PageHeader from '../template/pageHeader'
 
 class Todo extends Component {
     render() {
         return (
-          <h1>Component Todo </h1>
+          <PageHeader Titulo="Tarefas" descricao="cadastre suas tarefas aqui"/>
           //   <header className="App-header">
           //   <img src={logo} className="App-logo" alt="logo" />
           //   <p>

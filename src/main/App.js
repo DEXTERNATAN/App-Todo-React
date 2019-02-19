@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-import './App.css'
-import Menu from '../Menu/Menu'
 import { Switch, Route } from 'react-router-dom'
+
+import './App.css'
+import Menu from '../template/Menu'
+// import Rodape from '../template/Rodape'
 import Todo from '../Todo/Todo'
 import Sobre from '../Sobre/Sobre'
-import Rodape from '../Rodape/Rodape'
 
 class App extends Component {
   render() {
@@ -15,7 +16,7 @@ class App extends Component {
           <Route exact path='/' component={Todo}/>
           <Route path='/sobre' component={Sobre}/>
         </Switch>
-        <Rodape />
+        {/* <Rodape /> */}
       </div>
     );
   }

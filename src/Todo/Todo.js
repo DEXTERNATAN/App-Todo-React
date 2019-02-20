@@ -20,6 +20,7 @@ class Todo extends Component {
 
       this.handleChange = this.handleChange.bind(this);
       this.handleAdd = this.handleAdd.bind(this);
+      this.handleRemove = this.handleRemove.bind(this);
 
       this.refresh()
 
@@ -71,8 +72,17 @@ class Todo extends Component {
 
     }
 
-    handleRemove() {
-      // axios.delete(URL+ '/' + todo).then(
+    handleRemove(tarefa) {
+
+      // Usando o Firebase
+      FirebaseService.remove(tarefa.key, 'tarefa').then(
+        data => {
+          console.log('Tarefa removida com sucesso: ', tarefa);
+        }
+      )
+
+      // Usando o Axios
+      // axios.delete(`${URL}/${tarefa.id}`).then(
       //   data => this.refresh()
       // )
       console.log('Metodo de deletar acionado')

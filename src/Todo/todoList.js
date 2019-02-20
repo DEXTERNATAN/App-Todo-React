@@ -15,7 +15,7 @@ export default props => {
           <IconButon
             style="danger"
             icon="trash-alt"
-            onclick={props.handleRemove}
+            onClick={() => props.handleRemove(tarefa)}
           />
         </td>
       </tr>

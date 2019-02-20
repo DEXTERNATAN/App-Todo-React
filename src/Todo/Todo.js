@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import FirebaseService from '../services/FirebaseService'
+import FirebaseService from '../services/FirebaseService'
 import axios from "axios";
 
 import PageHeader from '../template/pageHeader'
@@ -21,8 +21,26 @@ class Todo extends Component {
       this.handleChange = this.handleChange.bind(this);
       this.handleAdd = this.handleAdd.bind(this);
 
-      axios.get(URL).then(data => console.log('Dados buscados: ', data))
+      this.refresh()
 
+    }
+
+    refresh() {
+
+      // Usando firebase
+      FirebaseService.getDataList('tarefa', (resp) => {
+        console.log('Dados', resp)
+        // this.setState({data: dataReceived})
+        this.setState({...this.state, descricao: '', list: resp})
+      })
+
+      // Usando Axios
+      // axios.get(URL).then(
+      //   resp => {
+      //     console.log('Dados buscados: ', resp.data)
+      //     this.setState({...this.state, descricao: '', list: [resp.data]})
+      //   }
+      // )
     }
 
     handleAdd(e) {
@@ -35,10 +53,29 @@ class Todo extends Component {
         descricao
       }
 
-      axios.post(URL, objToSubmit)
-        .then(data => console.log('Dados: ', data))
-        .catch(error => console.log(error))
-        
+      // Usando axios
+      // axios.post(URL, objToSubmit)
+      //   .then(resp => {
+      //     console.log('Dados: ', resp)
+      //     this.refresh()
+      //   })
+      //   .catch(error => console.log(error))
+
+      // Usando Firebase
+      const id = FirebaseService.pushData('tarefa', objToSubmit)
+      if(id){
+        console.log('registro inserido com sucesso')
+      }else{
+        console.log('registro não pode ser inserido')
+      }
+
+    }
+
+    handleRemove() {
+      // axios.delete(URL+ '/' + todo).then(
+      //   data => this.refresh()
+      // )
+      console.log('Metodo de deletar acionado')
     }
 
     handleChange(e) {
@@ -53,7 +90,7 @@ class Todo extends Component {
               descricao={this.state.descricao} 
               handleAdd={this.handleAdd} 
               handleChange={this.handleChange} />
-            <TodoList />
+            <TodoList handleRemove={this.handleRemove} list={this.state.list} />
           </div>  
         )
     }

@@ -79,5 +79,8 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 ### Referências para estudo
 
+https://tableless.com.br/guia-completo-react-ecossistema/
+
 https://blog.tecsinapse.com.br/criando-uma-aplica%C3%A7%C3%A3o-react-firebase-passo-a-passo-9ebc5a8a442f
+
 https://css-tricks.com/intro-firebase-react/

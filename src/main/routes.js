@@ -5,7 +5,7 @@ import Todo from '../Todo/Todo';
 import App from './App'
 
 export default props => (
-    <BrowserRouter>
+    <BrowserRouter history={hashHistory}>
         <Switch>
             <Route path="/" exact={true} component={App} />
             <Route path="/sobre" component={Sobre} />

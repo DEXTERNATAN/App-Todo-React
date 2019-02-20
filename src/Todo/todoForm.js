@@ -6,9 +6,9 @@ export default props => (
     <form>
       <div className="form-row">
         <div className="form-group col-md-11">
-          <input type="text" className="form-control" id="descricao" descricao={props.descricao} placeholder="Adicione uma tarefa" 
+          <input type="text" className="form-control" id="descricao" placeholder="Adicione uma tarefa" 
+            value={props.descricao}
             onChange={props.handleChange}
-            onClick={props.handleAdd}
           />
         </div>
         <div className="form-group col-md-1">

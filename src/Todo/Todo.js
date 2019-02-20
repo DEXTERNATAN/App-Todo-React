@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import logo from '../logo.svg';
+import FirebaseService from '../services/FirebaseService'
 import PageHeader from '../template/pageHeader'
 import TodoList from './todoList'
 import TodoForm from './todoForm'
@@ -14,12 +14,13 @@ class Todo extends Component {
         list: []
       }
 
-      this.handleAdd = this.handleAdd.bind(this);
       this.handleChange = this.handleChange.bind(this);
+      this.handleAdd = this.handleAdd.bind(this);
     }
 
-    handleAdd() {
-      console.log('Add', this.state);
+    handleAdd(e) {
+      e.preventDefault();
+      console.log('Funcionou', this.state);
     }
 
     handleChange(e) {

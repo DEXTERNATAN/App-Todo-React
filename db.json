@@ -2,7 +2,11 @@
   "posts": [
     {
       "id": 1,
-      "title": "hello"
+      "title": "Lavar o carro"
+    },
+    {
+      "id": 2,
+      "title": "Levar o lixo pra fora"
     }
   ],
   "profile": {

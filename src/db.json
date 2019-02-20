@@ -1,0 +1,17 @@
+{
+  "tarefas": [
+    {
+      "id": 1,
+      "descricao": "Lavar o carro"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "hello"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

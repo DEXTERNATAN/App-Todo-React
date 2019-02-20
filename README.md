@@ -1,8 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
-
-In the project directory, you can run:
 
 ## Documentação API do firebase
 https://firebase.google.com/docs/reference/rest/database/
@@ -12,6 +9,10 @@ https://tasks-43f03.firebaseio.com/tarefa.json?print=pretty (new)
 
 https://my-json-server.typicode.com/DEXTERNATAN/App-Todo-React (old)
 
+
+## Available Scripts
+
+In the project directory, you can run:
 
 ### `npm start`
 
@@ -75,3 +76,11 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+### Referências para estudo
+
+https://tableless.com.br/guia-completo-react-ecossistema/
+
+https://blog.tecsinapse.com.br/criando-uma-aplica%C3%A7%C3%A3o-react-firebase-passo-a-passo-9ebc5a8a442f
+
+https://css-tricks.com/intro-firebase-react/

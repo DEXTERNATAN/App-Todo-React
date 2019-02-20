@@ -4,6 +4,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+## Documentação API do firebase
+https://firebase.google.com/docs/reference/rest/database/
+
+## Acesso a API de tarefas
+https://tasks-43f03.firebaseio.com/tarefa.json?print=pretty (new)
+
+https://my-json-server.typicode.com/DEXTERNATAN/App-Todo-React (old)
+
+
 ### `npm start`
 
 Runs the app in the development mode.<br>

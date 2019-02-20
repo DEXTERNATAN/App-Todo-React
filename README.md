@@ -4,6 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+## Acesso a API de tarefas
+https://my-json-server.typicode.com/DEXTERNATAN/App-Todo-React
+
+
 ### `npm start`
 
 Runs the app in the development mode.<br>

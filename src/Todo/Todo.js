@@ -1,12 +1,9 @@
 import React, { Component } from 'react'
 import FirebaseService from '../services/FirebaseService'
-import axios from "axios";
 
 import PageHeader from '../template/pageHeader'
 import TodoList from './todoList'
 import TodoForm from './todoForm'
-
-const URL = 'https://tasks-43f03.firebaseio.com/tarefa.json';
 
 class Todo extends Component {
 
@@ -27,21 +24,9 @@ class Todo extends Component {
     }
 
     refresh() {
-
-      // Usando firebase
       FirebaseService.getDataList('tarefa', (resp) => {
-        console.log('Dados', resp)
-        // this.setState({data: dataReceived})
         this.setState({...this.state, descricao: '', list: resp})
       })
-
-      // Usando Axios
-      // axios.get(URL).then(
-      //   resp => {
-      //     console.log('Dados buscados: ', resp.data)
-      //     this.setState({...this.state, descricao: '', list: [resp.data]})
-      //   }
-      // )
     }
 
     handleAdd(e) {
@@ -54,15 +39,6 @@ class Todo extends Component {
         descricao
       }
 
-      // Usando axios
-      // axios.post(URL, objToSubmit)
-      //   .then(resp => {
-      //     console.log('Dados: ', resp)
-      //     this.refresh()
-      //   })
-      //   .catch(error => console.log(error))
-
-      // Usando Firebase
       const id = FirebaseService.pushData('tarefa', objToSubmit)
       if(id){
         console.log('registro inserido com sucesso')
@@ -73,19 +49,11 @@ class Todo extends Component {
     }
 
     handleRemove(tarefa) {
-
-      // Usando o Firebase
       FirebaseService.remove(tarefa.key, 'tarefa').then(
         data => {
           console.log('Tarefa removida com sucesso: ', tarefa);
         }
       )
-
-      // Usando o Axios
-      // axios.delete(`${URL}/${tarefa.id}`).then(
-      //   data => this.refresh()
-      // )
-      console.log('Metodo de deletar acionado')
     }
 
     handleChange(e) {

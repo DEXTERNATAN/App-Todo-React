@@ -12,11 +12,9 @@ class Menu extends Component {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item active">
-                            {/* <a className="nav-link" href="#/todos">Tarefas <span className="sr-only">(current)</span></a> */}
                             <NavLink className="nav-link" to="/">Home</NavLink>
                         </li>
                         <li className="nav-item">
-                            {/* <a className="nav-link" href="#/sobre">Sobre <span className="sr-only">(current)</span></a> */}
                             <NavLink className="nav-link" to="/sobre">Sobre</NavLink>
                         </li>
                     </ul>

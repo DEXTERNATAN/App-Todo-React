@@ -1,8 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
-
-In the project directory, you can run:
 
 ## Documentação API do firebase
 https://firebase.google.com/docs/reference/rest/database/
@@ -12,6 +9,10 @@ https://tasks-43f03.firebaseio.com/tarefa.json?print=pretty (new)
 
 https://my-json-server.typicode.com/DEXTERNATAN/App-Todo-React (old)
 
+
+## Available Scripts
+
+In the project directory, you can run:
 
 ### `npm start`
 

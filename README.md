@@ -8,7 +8,8 @@ In the project directory, you can run:
 https://firebase.google.com/docs/reference/rest/database/
 
 ## Acesso a API de tarefas
-https://my-json-server.typicode.com/DEXTERNATAN/App-Todo-React
+https://tasks-43f03.firebaseio.com/tarefa.json?print=pretty (new)
+https://my-json-server.typicode.com/DEXTERNATAN/App-Todo-React (old)
 
 
 ### `npm start`

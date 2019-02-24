@@ -9,13 +9,26 @@ export default props => {
     
     return list.map((tarefa) => (
       <tr key={tarefa.key}>
-        <td>{tarefa.descricao}</td>
+        <td className={tarefa.done ? 'markedAsDone' : ''}>{tarefa.descricao}</td>
         <td>
           <IconButon
+            hide={tarefa.done}
+            style='success'
+            icon='check'
+            onClick={() => props.handleMarkAsDone(tarefa)}> 
+          </IconButon>
+          <IconButon
+            hide={!tarefa.done}
+            style='warning'
+            icon='undo'
+            onClick={() => props.handleMarkAsPending(tarefa)}>
+          </IconButon>
+          <IconButon
+            hide={!tarefa.done}
             style="danger"
             icon="trash-alt"
-            onClick={() => props.handleRemove(tarefa)}
-          />
+            onClick={() => props.handleRemove(tarefa)} >
+          </IconButon> 
         </td>
       </tr>
     ));

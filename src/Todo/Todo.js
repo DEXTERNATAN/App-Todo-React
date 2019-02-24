@@ -12,13 +12,15 @@ class Todo extends Component {
 
       this.state = {
         descricao: '',
+        done: false,
         list: []
       }
 
-      this.handleChange = this.handleChange.bind(this);
-      this.handleAdd = this.handleAdd.bind(this);
-      this.handleRemove = this.handleRemove.bind(this);
-
+      this.handleChange = this.handleChange.bind(this)
+      this.handleAdd = this.handleAdd.bind(this)
+      this.handleRemove = this.handleRemove.bind(this)
+      this.handleMarkAsDone = this.handleMarkAsDone.bind(this)
+      this.handleMarkAsPending = this.handleMarkAsPending.bind(this)
       this.refresh()
 
     }
@@ -34,9 +36,11 @@ class Todo extends Component {
       e.preventDefault();
       
       const { descricao } = this.state;
+      const { done } = this.state;
       
       let objToSubmit = {
-        descricao
+        descricao,
+        done,
       }
 
       const id = FirebaseService.pushData('tarefa', objToSubmit)
@@ -60,6 +64,38 @@ class Todo extends Component {
       this.setState({ ...this.state, descricao: e.target.value})
     }
 
+    handleMarkAsDone(tarefa) {
+      console.log('Marcado como feito')
+      let objToUpdate = {
+        ...tarefa,
+        done: true
+      }
+      
+      FirebaseService.updateData(tarefa.key, 'tarefa', objToUpdate).then(
+        data => {
+          console.log('Atualizado com sucesso')
+          this.refresh()
+        }
+      )
+
+    }
+
+    handleMarkAsPending(tarefa) {
+      console.log('Marcado como pendente')
+      
+      let objToUpdate = {
+        ...tarefa,
+        done: false
+      }
+      
+      FirebaseService.updateData(tarefa.key, 'tarefa', objToUpdate).then(
+        data => {
+          console.log('Atualizado com sucesso')
+          this.refresh()
+        }
+      )
+    }
+
     render() {
         return (
           <div className="container">            
@@ -68,7 +104,12 @@ class Todo extends Component {
               descricao={this.state.descricao} 
               handleAdd={this.handleAdd} 
               handleChange={this.handleChange} />
-            <TodoList handleRemove={this.handleRemove} list={this.state.list} />
+            <TodoList 
+              list={this.state.list} 
+              handleRemove={this.handleRemove} 
+              handleMarkAsDone={this.handleMarkAsDone}
+              handleMarkAsPending={this.handleMarkAsPending}
+            />
           </div>  
         )
     }

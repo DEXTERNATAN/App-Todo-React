@@ -30,4 +30,9 @@ export default class FirebaseService {
         return firebaseDatabase.ref(node + '/' + id).remove();
     };  
 
+    static updateData = (id, node, obj) => {
+        return firebaseDatabase.ref(node + '/' + id).set({...obj});
+    };
+
+
 }

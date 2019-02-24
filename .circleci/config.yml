@@ -20,6 +20,6 @@ jobs:
           paths:
           - node_modules
       - run: echo "Hello world"  
-      # - run:
-      #     name: test
-      #     command: npm test
+      - run:
+          name: test
+          command: yarn jest test

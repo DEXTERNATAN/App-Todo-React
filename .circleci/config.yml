@@ -23,3 +23,6 @@ jobs:
       - run:
           name: run node tests
           command: npm run test
+      - run:
+          name: run frontend tests
+          command: cd frontend && npm run test          

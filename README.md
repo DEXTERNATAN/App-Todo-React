@@ -1,3 +1,12 @@
+![GitHub issues](https://img.shields.io/github/issues/DEXTERNATAN/App-Todo-React.svg)
+![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/DEXTERNATAN/App-Todo-React.svg)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/DEXTERNATAN/App-Todo-React.svg)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/DEXTERNATAN/App-Todo-React.svg)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/y/DEXTERNATAN/App-Todo-React.svg)
+
+
+## Introdução
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 

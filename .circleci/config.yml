@@ -6,5 +6,5 @@ jobs:
       - image: circleci/node:8.11.4
     working_directory: /src/github.com/DEXTERNATAN/App-Todo-React  
     steps:
-      checkout # checks out the source code
-      run: echo "Hello world"  
+      - checkout # checks out the source code
+      - run: echo "Hello world"  

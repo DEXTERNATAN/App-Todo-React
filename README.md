@@ -86,6 +86,12 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
+### CircleCI - Integração continua
+https://github.com/CircleCI-Public/circleci-demo-javascript-express/blob/master/.circleci/config.yml
+https://alexandremagno.net/2018/09/testando-componentes-react-jest/
+https://facebook.github.io/create-react-app/docs/running-tests
+
+
 ### Referências para estudo
 
 https://tableless.com.br/guia-completo-react-ecossistema/

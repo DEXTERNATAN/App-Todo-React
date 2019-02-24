@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Switch, Route } from 'react-router-dom'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
+// 
 // incluir fonteawsone via import assim como fiz com o Bootstrap
 
 import './App.css'

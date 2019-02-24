@@ -1,7 +1,7 @@
 # Top of file
 version: 2
 jobs:
-  # working_directory: ~/App-Todo-React  
+  working_directory: /home/circleci/project/App-Todo-React  
   build:
     docker:
       - image: circleci/node:8.11.4

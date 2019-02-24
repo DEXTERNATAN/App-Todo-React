@@ -7,4 +7,4 @@ jobs:
       - image: circleci/node:8.11.4
     steps:
       - checkout # checks out the source code
-      - run: echo "Hello world"  
+      - run: pwd  

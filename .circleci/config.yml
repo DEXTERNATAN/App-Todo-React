@@ -1,10 +1,10 @@
 # Top of file
 version: 2
 jobs:
-  working_directory: /var/www/App-Todo-React  
+  working_directory: /src/github.com/DEXTERNATAN/App-Todo-React  
   build:
     docker:
       - image: circleci/node:8.11.4
     steps:
       - checkout # checks out the source code
-      - run: pwd  
+      - run: echo "Hello world"  

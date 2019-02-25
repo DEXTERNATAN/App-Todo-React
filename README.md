@@ -88,9 +88,13 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 ### CircleCI - Integração continua
 https://medium.com/static-void-academy/easy-peasy-ci-cd-w-circleci-282bc85ddcf5
+
 https://github.com/CircleCI-Public/circleci-demo-javascript-express/blob/master/.circleci/config.yml
+
 https://alexandremagno.net/2018/09/testando-componentes-react-jest/
+
 https://facebook.github.io/create-react-app/docs/running-tests
+
 
 
 

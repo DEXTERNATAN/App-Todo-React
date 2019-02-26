@@ -19,6 +19,26 @@ export default class FirebaseService {
         return query;
     };
 
+    static searchDataList = (nodePath, queryText, callback, size = 10) => {
+
+        let query = firebaseDatabase.ref(nodePath)
+                                   .limitToLast(size)
+                                   .startAt(queryText)
+                                   .endAt(queryText);
+                                   
+        query.on('value', dataSnapshot => {
+            let items = [];
+            dataSnapshot.forEach(childSnapshot => {
+                let item = childSnapshot.val();
+                item['key'] = childSnapshot.key;
+                items.push(item);
+            });
+            callback(items);
+        });
+
+        return query;
+    };
+
     static pushData = (node, objToSubmit) => {
         const ref = firebaseDatabase.ref(node).push();
         const id = firebaseDatabase.ref(node).push().key;

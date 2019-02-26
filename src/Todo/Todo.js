@@ -21,14 +21,24 @@ class Todo extends Component {
       this.handleRemove = this.handleRemove.bind(this)
       this.handleMarkAsDone = this.handleMarkAsDone.bind(this)
       this.handleMarkAsPending = this.handleMarkAsPending.bind(this)
+      this.handleSearch = this.handleSearch.bind(this)
       this.refresh()
 
     }
 
-    refresh() {
-      FirebaseService.getDataList('tarefa', (resp) => {
-        this.setState({...this.state, descricao: '', list: resp})
-      })
+    refresh(descricao ='') {
+      
+      if(!descricao){
+        FirebaseService.getDataList('tarefa/', (resp) => this.setState({...this.state, descricao: '', list: resp}))
+      }else{
+        FirebaseService.searchDataList('tarefa/', descricao, (resp) => this.setState({...this.state, descricao: '', list: resp}))
+      }
+
+    }
+
+    handleSearch(e) {
+      e.preventDefault();
+      this.refresh(this.state.descricao)
     }
 
     handleAdd(e) {
@@ -53,11 +63,7 @@ class Todo extends Component {
     }
 
     handleRemove(tarefa) {
-      FirebaseService.remove(tarefa.key, 'tarefa').then(
-        data => {
-          console.log('Tarefa removida com sucesso: ', tarefa);
-        }
-      )
+      FirebaseService.remove(tarefa.key, 'tarefa').then(data => this.refresh(this.state.descricao))
     }
 
     handleChange(e) {
@@ -65,35 +71,22 @@ class Todo extends Component {
     }
 
     handleMarkAsDone(tarefa) {
-      console.log('Marcado como feito')
       let objToUpdate = {
         ...tarefa,
         done: true
       }
       
-      FirebaseService.updateData(tarefa.key, 'tarefa', objToUpdate).then(
-        data => {
-          console.log('Atualizado com sucesso')
-          this.refresh()
-        }
-      )
+      FirebaseService.updateData(tarefa.key, 'tarefa', objToUpdate).then(data => this.refresh(this.state.descricao))
 
     }
 
     handleMarkAsPending(tarefa) {
-      console.log('Marcado como pendente')
-      
       let objToUpdate = {
         ...tarefa,
         done: false
       }
       
-      FirebaseService.updateData(tarefa.key, 'tarefa', objToUpdate).then(
-        data => {
-          console.log('Atualizado com sucesso')
-          this.refresh()
-        }
-      )
+      FirebaseService.updateData(tarefa.key, 'tarefa', objToUpdate).then(data => this.refresh(this.state.descricao))
     }
 
     render() {
@@ -103,7 +96,9 @@ class Todo extends Component {
             <TodoForm 
               descricao={this.state.descricao} 
               handleAdd={this.handleAdd} 
-              handleChange={this.handleChange} />
+              handleChange={this.handleChange} 
+              handleSearch={this.handleSearch}
+            />
             <TodoList 
               list={this.state.list} 
               handleRemove={this.handleRemove} 

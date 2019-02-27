@@ -36,12 +36,12 @@ export default props => {
 
   return (
     <div>
-      <PageHeader Titulo="Tarefas" descricao="Lista de tarefas cadastradas" />
+      {/* <PageHeader Titulo="Tarefas" descricao="Lista de tarefas cadastradas" /> */}
       <table className="table table-striped">
         <thead>
           <tr>
-            <th scope="col">Descrição</th>
-            <th scope="col">Ações</th>
+            <th>Descrição</th>
+            <th className="tableActions">Ações</th>
           </tr>
         </thead>
         <tbody>

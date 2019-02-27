@@ -16,12 +16,13 @@ class Todo extends Component {
         list: []
       }
 
-      this.handleChange = this.handleChange.bind(this)
-      this.handleAdd = this.handleAdd.bind(this)
-      this.handleRemove = this.handleRemove.bind(this)
-      this.handleMarkAsDone = this.handleMarkAsDone.bind(this)
-      this.handleMarkAsPending = this.handleMarkAsPending.bind(this)
-      this.handleSearch = this.handleSearch.bind(this)
+      this.handleChange         = this.handleChange.bind(this)
+      this.handleAdd            = this.handleAdd.bind(this)
+      this.handleRemove         = this.handleRemove.bind(this)
+      this.handleMarkAsDone     = this.handleMarkAsDone.bind(this)
+      this.handleMarkAsPending  = this.handleMarkAsPending.bind(this)
+      this.handleSearch         = this.handleSearch.bind(this)
+      this.handleClear          = this.handleClear.bind(this) 
       this.refresh()
 
     }
@@ -37,13 +38,13 @@ class Todo extends Component {
     }
 
     handleSearch(e) {
-      e.preventDefault();
+      
       this.refresh(this.state.descricao)
     }
 
     handleAdd(e) {
 
-      e.preventDefault();
+      
       
       const { descricao } = this.state;
       const { done } = this.state;
@@ -89,15 +90,21 @@ class Todo extends Component {
       FirebaseService.updateData(tarefa.key, 'tarefa', objToUpdate).then(data => this.refresh(this.state.descricao))
     }
 
+    handleClear() {
+      console.log('Limpar o formulario')
+      this.refresh()  
+    }
+
     render() {
         return (
           <div className="container">            
-            <PageHeader Titulo="Tarefas" descricao="cadastre suas tarefas aqui"/>
+            <PageHeader Titulo="Tarefas" descricao="Cadastro"/>
             <TodoForm 
               descricao={this.state.descricao} 
               handleAdd={this.handleAdd} 
               handleChange={this.handleChange} 
               handleSearch={this.handleSearch}
+              handleClear={this.handleClear}
             />
             <TodoList 
               list={this.state.list} 

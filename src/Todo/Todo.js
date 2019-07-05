@@ -39,12 +39,11 @@ class Todo extends Component {
 
     handleSearch(e) {
       
+      
       this.refresh(this.state.descricao)
     }
 
     handleAdd(e) {
-
-      
       
       const { descricao } = this.state;
       const { done } = this.state;
